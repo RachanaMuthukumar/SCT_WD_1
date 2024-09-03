@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photo Blog</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family:'Comic Sans MS', cursive;
+            margin: 0;
+            padding: 0;
+           background-color: rgb(251, 222, 222);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        .navbar.scrolled {
+            background-color: blanchedalmond;
+            color: #000000;
+            font-style: italic;
+        }
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            background-color: cream;
+            transition: background-color 0.3s, color 0.3s;
+            z-index: 1000;
+        }
+        .align {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            text-align: center; 
+        }
+        #t {
+            flex: 1;
+            font-size: 2rem;
+            margin: 0;
+            font-size: 90px;
+            text-align: center;
+        }
+        .navbar a {
+            color: black;
+            text-decoration: none;
+            padding: 10px 19px;
+            display: block;
+            font-size: 22px;
+        }
+        .navbar a:hover {
+            background-color: rgb(243, 196, 196);
+        }
+        .navbar .menu {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        .navbar .menu li {
+            margin-left: 20px;
+        }
+        .navbar .toggle {
+            display: none;
+            font-size: 1.5em;
+            color: white;
+            cursor: pointer;
+        }
+        .content {
+            margin-top: 100px;
+            padding: 20px;
+            height:1300px; 
+            color: beige;
+        }
+        p{
+            height:80px;
+            padding:50px;
+            text-align:center;
+            font-size:35px;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: flex;
+            margin-top: flex;
+            margin-left: flex;
+            padding-left: 100px;
+        }
+        .gallery-item {
+            padding: 70px;
+            width: calc(25% - 10px);
+        }
+        .gallery-item img {
+            width: 350px;
+            height: 300px;
+        }
+        /* Responsive styling */
+        @media (max-width: 1024px) {
+            #t {
+                font-size: 70px; /* Reduce title size for medium screens */
+            }
+
+            .navbar a {
+                font-size: 18px; /* Adjust link size for medium screens */
+            }
+            .content {
+                margin-top: 80px; /* Adjust top margin for medium screens */
+                padding: 15px;    /* Reduce padding for medium screens */
+            }
+            .gallery-item {
+                flex: 1 1 calc(33.33% - 40px);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 10px;
+            }
+
+            .navbar .menu {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .navbar .menu li {
+                margin-left: 0;
+                margin-bottom: 0px; /* Adjust margin for better spacing */
+            }
+
+            .navbar .toggle {
+                display: block; /* Show toggle button on smaller screens */
+            }
+
+            .navbar .menu {
+                display: none; /* Initially hide the menu */
+            }
+
+            .navbar .menu.active {
+                display: flex; /* Show the menu when toggle is active */
+                flex-direction: column;
+                width: 100%;
+            }
+
+            #t {
+                font-size: 50px; /* Further reduce title size for small screens */
+            }
+
+            p {
+                font-size: 28px; /* Adjust paragraph font size for smaller screens */
+                padding: 20px;
+            }
+            .content {
+                margin-top: 60px; /* Further reduce top margin for small screens */
+                padding: 10px;    /* Further reduce padding for small screens */
+            }
+            .gallery-item {
+                flex: 1 1 calc(50% - 40px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar {
+                padding: 10px; /* Further reduce padding for very small screens */
+            }
+
+            .navbar a {
+                font-size: 16px; /* Adjust link size for very small screens */
+                padding: 8px 15px;
+            }
+
+            #t {
+                font-size: 35px; /* Further reduce title size for very small screens */
+            }
+
+            p {
+                font-size: 22px; /* Further adjust paragraph font size */
+                padding: 5px;
+            }
+            .content {
+                margin-top: 50px; /* Further adjust top margin for very small screens */
+                padding: 0px;     /* Reduce padding for very small screens */
+            }
+            .gallery-item {
+                flex: 1 1 100%;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="align"><h1 id="t">Snapshot Stories</h1></div>
+        <div class="toggle" id="navbarToggle">&#9776;</div>
+        <ul class="menu" id="navbarMenu">
+            <li><a href="photo.html">Home</a></li>
+            <li><a href="pcontact.html">Contact</a></li>
+        </ul>
+    </div>
+    <script>
+        document.getElementById('navbarToggle').addEventListener('click', function() {
+            var menu = document.getElementById('navbarMenu');
+            menu.classList.toggle('active');
+        });
+    </script>
+    <div class="content">
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="p1.jpg" alt="Photo">
+            </div>
+            <div class="gallery-item">
+                <img src="p2.jpg" alt="Photo">
+            </div>
+            <div class="gallery-item">
+                <img src="p3.jpg" alt="Photo">
+            </div>
+            <div class="gallery-item">
+                <img src="p4.jpg" alt="Photo">
+            </div>
+            <div class="gallery-item">
+                <img src="p5.jpeg" alt="Photo">
+            </div>
+            <div class="gallery-item">
+                <img src="p6.webp" alt="Photo">
+            </div>
+            <div class="gallery-item">
+                <img src="p7.jpeg" alt="Photo">
+            </div>
+            <div class="gallery-item">
+                <img src="p8.jpeg" alt="Photo">
+            </div>
+            <div class="gallery-item">
+                <img src="p9.jpeg" alt="Photo">
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById('navbarToggle').addEventListener('click', function() {
+            var menu = document.getElementById('navbarMenu');
+            if (menu.classList.contains('show')) {
+                menu.classList.remove('show');
+            } else {
+                menu.classList.add('show');
+            }
+        });
+    </script>
+    <script>
+     window.addEventListener('scroll', function() {
+        var navbar = document.querySelector('.navbar');
+        if (window.scrollY > 50) { // Adjust scroll value as needed
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
+        });
+    </script>
+    <script>
+        let slideIndex = 1;
+        showSlides(slideIndex);
+        function plusSlides(n) {
+        showSlides(slideIndex += n);
+        }
+        function currentSlide(n) {
+        showSlides(slideIndex = n);
+        }
+        function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex = 1}
+        if (n < 1) {slideIndex = slides.length}
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+         }
+    </script>
+</body>
+</html>
